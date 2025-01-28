@@ -1,3 +1,5 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.example.Account;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,6 +36,8 @@ public class AccountTest {
     }
 
     @Test
+    @DisplayName("Check name to emboss")
+    @Description("Имя содержит от 3 до 19 символов вкл. Содержит только 1 пробел. Пробелов в начале или в конце строки нет.") // описание теста
     public void checkNameToEmbossTest(){
         Account account = new Account(name);
         boolean actualResult = account.checkNameToEmboss();
